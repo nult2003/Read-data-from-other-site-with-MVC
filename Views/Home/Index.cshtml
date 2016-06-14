@@ -1,0 +1,28 @@
+﻿@model WebApi2.Models.HomeModels
+
+<div class="content-site">
+
+    <div class="maincol">
+        <h1>@Html.DisplayFor(m=>m.GiaiDau)</h1>   
+       @foreach (var bd in Model.lstLichThiDau)
+       {
+            <h2>@bd.TenBang                            </h2>
+            <div class="team-info">
+
+                <div class="col2">
+
+                    <table class="gameresult">
+                        <tbody>
+                        @foreach (var match in bd.lstTranDau)
+                        {
+                            <tr><td class="team"><a href="#">@match.Team1</a></td><td class="score"><a href="#">@match.TySo</a></td><td class="team"><a href="#">@match.Team2</a></td><td class="date">@match.ThoiGian</td></tr>
+                        }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+       }
+
+    </div>
+
+</div>
